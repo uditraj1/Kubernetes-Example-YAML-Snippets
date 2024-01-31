@@ -1,0 +1,22 @@
+# web-app-deployment.yaml
+apiVersion: apps/v1 # api version of the resource
+kind: Deployment # resource type
+metadata:
+  name: my-web-app-deployment # deployment name
+spec:
+  replicas: 3 # three pods
+  selector:
+    matchLabels:
+      app: my-web-app # label to identify the pods
+  template:
+    metadata:
+      labels:
+        app: my-web-app # label applied to all pods of this deployment
+    spec:
+      containers: # two containers running in each pod
+      - name: frontend
+        image: sample-frontend-image:latest
+      - name: backend
+        image: sample-backend-image:latest
+
+ 
