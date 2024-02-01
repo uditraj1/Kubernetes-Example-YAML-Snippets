@@ -1,0 +1,13 @@
+# web-app-service.yaml
+apiVersion: v1 # kubernetes API version 
+kind: Service # resource type
+metadata:
+  name: my-web-app-service # service name
+spec:
+  selector:
+    app: my-web-app # label to select the pods
+  ports:
+  - protocol: TCP # protocol to use
+    port: 80 # port for service
+    targetPort: 80 # port on the pods to which the traffic will be forwarded
+  type: LoadBalancer
