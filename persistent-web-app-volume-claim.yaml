@@ -1,0 +1,11 @@
+# persistent-web-app-volume-claim.yaml
+apiVersion: v1 # api version for kubernetes
+kind: PersistentVolumeClaim # resource type to claim volume
+metadata:
+  name: my-web-app-pvc # name for the volume claim
+spec:
+  accessModes:
+    - ReadWriteOnce # read and write access for the volume
+  resources:
+    requests:
+      storage: 1Gi # storage capacity
