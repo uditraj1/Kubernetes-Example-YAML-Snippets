@@ -1,0 +1,11 @@
+apiVersion: v1 # version of kubernetes api
+kind: PersistentVolume # persistent volume resource created
+metadata:
+  name: my-web-app-pv # persistent volume name
+spec:
+  capacity:
+    storage: 1Gi # storage capacity of the volume
+  accessModes:
+    - ReadWriteOnce # mounted as read write
+  hostPath:
+    path: /data # volume storage path in node's filesystem
